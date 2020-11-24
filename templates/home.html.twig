@@ -8,4 +8,20 @@
 
 {% block body %}
     <h1>Share It!</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div>
+            <label for="email">Enter your email: </label>
+            <input type="email" name="email" id="email" required>
+        </div>
+         <div >
+            <input type="submit" value="Subscribe!">
+         </div>
+    </form>
 {% endblock %}
+
+
