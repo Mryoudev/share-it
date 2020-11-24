@@ -14,7 +14,9 @@ The web server implementation is left to the developer.
 For a quick start, use the *PHP built-in server* which can also be started with the custom **Composer** command:
 ```sh
 composer serve
-```
+
+php -S localhost:8000 -t public
+
 You will find the default page on `http://localhost:8000`.
 
 # Configuration
@@ -26,3 +28,22 @@ A `AbstractController` class is present with methods for rendering **Twig** temp
 
 # Templating
 A `link()` function has been added to **Twig** to create links to routes in templates.
+
+
+# Projet
+le site **Share It** doit permettre de partager des fichiers (clone de WeTransfer).
+
+Sur la page d'accueil, on doit avoir un formulaire qui permet d'envoyer 1 fihcier via le formulaire.
+Lorsque le formulaire est envoyé, on vérifie qui le fichier ait été correctement chargé,
+Puis on l'enregistrre dans un dossier `files` avec un nom unique. 
+
+Aussi, enregistrer les informations du fichier en base de données:
+
+ - `id` la clé primaire
+ - `filename` nom unique du fichier sur le serveur
+ - `original_filename` nom original du fichier
+ 
+Sur une autre page, on doit pouvoir télécharger un fichier.
+L'adresse pourrait être `/download/42` (où `42` est l'identifiant en base de données).
+
+Le lien de téléchargement doit apparaître après avoir envoyé un fichier.
