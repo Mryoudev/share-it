@@ -8,20 +8,14 @@
 
 {% block body %}
     <h1>Share It!</h1>
-
-    <form method="POST" enctype="multipart/form-data">
-        <div>
-            <label for="name">Name: </label>
-            <input type="text" name="name" id="name" required>
+    <form method="post" id="down" action="{{link ('homepage')}}" enctype='multipart/form-data'>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="file" name="file" accept="image/png, image/jpeg">
+            <label class="custom-file-label" for="file"> Télécharger un fichier </label>
+            <input type="submit" name="submit">
         </div>
-        <div>
-            <label for="email">Enter your email: </label>
-            <input type="email" name="email" id="email" required>
-        </div>
-         <div >
-            <input type="submit" value="Subscribe!">
-         </div>
     </form>
 {% endblock %}
 
 
+{# <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"> #}
